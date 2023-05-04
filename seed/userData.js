@@ -7,12 +7,12 @@ const userdata = [
         password: 'password123'
     },
     {
-        name: 'secondUser',
+        username: 'secondUser',
         email: 'secondUser@email.com',
         password: 'password456',
     },
     {
-        name: 'thirdUser',
+        username: 'thirdUser',
         email: 'thirdUser@email.com',
         password: 'password789',
     },

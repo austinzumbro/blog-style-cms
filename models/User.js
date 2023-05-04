@@ -5,6 +5,12 @@ class User extends Model { }
 
 User.init(
     {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
         // Username
         username: {
             type: DataTypes.STRING,
@@ -52,7 +58,7 @@ User.init(
             },
         },
         sequelize,
-        freezeTableName: false,
+        freezeTableName: true,
         underscored: true,
         modelName: 'user',
     }

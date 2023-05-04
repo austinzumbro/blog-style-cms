@@ -5,6 +5,12 @@ class Post extends Model { }
 
 Post.init(
     {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
         // Post title.
         title: {
             type: DataTypes.STRING,
@@ -17,7 +23,7 @@ Post.init(
         },
         // Record datetime of the moment of post creation
         date_created: {
-            type: DataTypes.NOW,
+            type: DataTypes.DATE,
             allowNull: false,
         },
         // Associated User id of the user making the post
@@ -32,7 +38,7 @@ Post.init(
     },
     {
         sequelize,
-        freezeTableName: false,
+        freezeTableName: true,
         underscored: true,
         modelName: 'post',
     }

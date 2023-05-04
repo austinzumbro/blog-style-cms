@@ -5,6 +5,12 @@ class Comment extends Model { }
 
 Comment.init(
     {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
         // Text content of the comment.
         content: {
             type: DataTypes.TEXT,
@@ -12,7 +18,7 @@ Comment.init(
         },
         // Store the current datetime at moment of creation
         date_created: {
-            type: DataTypes.NOW,
+            type: DataTypes.DATE,
             allowNull: false,
         },
         // Associated Post id
@@ -36,7 +42,7 @@ Comment.init(
     },
     {
         sequelize,
-        freezeTableName: false,
+        freezeTableName: true,
         underscored: true,
         modelName: 'comment',
     }
