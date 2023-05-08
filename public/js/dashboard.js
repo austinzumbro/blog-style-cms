@@ -3,8 +3,6 @@ const postForm = document.querySelector("#new-post-form");
 const blogPostSection = document.querySelector("#dashboard-blog-posts");
 
 const createPost = async (event) => {
-    event.preventDefault();
-
     const postTitle = document.querySelector("#post-title").value.trim();
     const postBody = document.querySelector("#post-textarea").value;
 
@@ -23,6 +21,21 @@ const createPost = async (event) => {
         } else {
             alert("Failed to comment");
         }
+    }
+};
+
+const deletePost = async (event) => {
+    let postId = event.target.dataset.postid;
+    console.log(postId);
+
+    const response = await fetch(`/api/posts/${postId}`, {
+        method: "DELETE",
+    });
+
+    if (response.ok) {
+        document.location.reload();
+    } else {
+        alert("Failed to update post.");
     }
 };
 
@@ -72,6 +85,9 @@ const handleClick = (event) => {
     }
     if (target.classList.contains("update-submit-button")) {
         submitUpdate(event);
+    }
+    if (target.classList.contains("delete-button")) {
+        deletePost(event);
     }
 };
 

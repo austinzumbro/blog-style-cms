@@ -21,7 +21,6 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
     try {
-        console.log(req.body);
         const dbPostData = await Post.update(req.body, {
             where: {
                 id: req.params.id,
@@ -32,6 +31,19 @@ router.put("/:id", async (req, res) => {
             return;
         }
         res.status(200).json(dbPostData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.delete("/:id", async (req, res) => {
+    try {
+        await Post.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+        res.status(200).json({ message: "Deletion successful." });
     } catch (err) {
         res.status(500).json(err);
     }

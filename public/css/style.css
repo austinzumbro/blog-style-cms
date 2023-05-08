@@ -48,8 +48,7 @@ h2 {
     position: relative;
     align-self: right;
 } */
-
-.update-button,
+.button-section,
 .update-submit-button {
     position: absolute;
     bottom: -10px;
@@ -58,7 +57,8 @@ h2 {
 
 .update-button,
 .update-submit-button,
-.new-post-button {
+.new-post-button,
+.delete-button {
     box-shadow: 1px 1px 0px 0px black, 2px 2px 0px 0px black,
         3px 3px 0px 0px black, 4px 4px 0px 0px black, 5px 5px 0px 0px black;
 }

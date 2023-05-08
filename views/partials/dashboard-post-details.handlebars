@@ -10,10 +10,16 @@
         href="/post/{{id}}/update"
         class="btn btn-lg btn-warning update-button"
     >Update</a> --}}
-    <button
-        class="btn btn-lg btn-warning update-button"
-        data-postid="{{id}}"
-    >Update</button>
+    <div class="button-section">
+        <button
+            class="btn btn-lg btn-warning update-button"
+            data-postid="{{id}}"
+        >Update</button>
+        <button
+            class="btn btn-lg btn-danger delete-button ms-2"
+            data-postid="{{id}}"
+        >Delete</button>
+    </div>
 
     <a href="/post/{{id}}" class="comments-button">Comments
         <span class="comment-count">{{array_length comments}}</span></a>
@@ -47,7 +53,7 @@
         <button
             type="submit"
             form="update-post-form-{{id}}"
-            class="btn btn-lg btn-danger update-submit-button"
+            class="btn btn-lg btn-warning update-submit-button ms-3"
             data-postid="{{id}}"
         >Update</button>
     </form>
