@@ -10,9 +10,6 @@ router.post("/", async (req, res) => {
             post_id: req.body.post_id,
             user_id: req.session.userId,
         });
-
-        console.log("\n------- CREATE COMMENT RESPONSE --------\n");
-        console.log(dbCommentData);
         res.status(200).json(dbCommentData);
     } catch (err) {
         console.log(err);

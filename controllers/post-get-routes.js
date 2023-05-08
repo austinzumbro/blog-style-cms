@@ -8,7 +8,6 @@ router.get("/:id", async (req, res) => {
             include: [{ model: User, attributes: ["username"] }],
         });
         const post = postData.get({ plain: true });
-        // console.log(post);
 
         const commentData = await Comment.findAll({
             where: {
@@ -20,7 +19,6 @@ router.get("/:id", async (req, res) => {
         const comments = commentData.map((comment) =>
             comment.get({ plain: true })
         );
-        //console.log(comments);
 
         res.render("post", {
             post: post,

@@ -56,8 +56,6 @@ const submitUpdate = async (event) => {
     const newPostTitle = document.querySelector(`#post-title-${postid}`);
     const newPostContent = document.querySelector(`#post-textarea-${postid}`);
 
-    console.log(postid, newPostTitle, newPostContent);
-
     if (newPostTitle && newPostContent) {
         const response = await fetch(`/api/posts/${postid}`, {
             method: "PUT",

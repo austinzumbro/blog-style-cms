@@ -18,6 +18,8 @@ const sess = {
     saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize,
+        checkExpirationInterval: 15 * 60 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
+        expiration: 1 * 60 * 1000,
     }),
     proxy: true,
 };

@@ -41,8 +41,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
         const posts = user.posts;
         const comments = user.comments;
 
-        console.log("\n---- USER DATA ----\n\n", user);
-
         res.render("dashboard", {
             user: user,
             posts: posts,

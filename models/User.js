@@ -41,16 +41,18 @@ User.init(
         hooks: {
             // Modify the input before creation
             beforeCreate: async (newUserData) => {
-                console.log("Create hook is running.");
                 // Encrypt the user's password
-                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                newUserData.password = await bcrypt.hash(
+                    newUserData.password,
+                    10
+                );
                 return newUserData;
             },
             // Modify the input before updating
             beforeUpdate: async (updatedUserData) => {
-                console.log("Update hook is running.")
                 // Force the email address into all lowercase characters
-                updatedUserData.email = await updatedUserData.email.toLowerCase();
+                updatedUserData.email =
+                    await updatedUserData.email.toLowerCase();
                 return updatedUserData;
             },
         },

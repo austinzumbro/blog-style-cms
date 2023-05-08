@@ -9,9 +9,6 @@ router.post("/", async (req, res) => {
             date_created: new Date(),
             user_id: req.session.userId,
         });
-
-        console.log("\n------- CREATE POST RESPONSE --------\n");
-        console.log(dbPostData);
         res.status(200).json(dbPostData);
     } catch (err) {
         console.log(err);
