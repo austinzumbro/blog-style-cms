@@ -26,7 +26,6 @@ const createPost = async (event) => {
 
 const deletePost = async (event) => {
     let postId = event.target.dataset.postid;
-    console.log(postId);
 
     const response = await fetch(`/api/posts/${postId}`, {
         method: "DELETE",
@@ -91,5 +90,5 @@ const handleClick = (event) => {
     }
 };
 
-postForm.addEventListener("submit", createPost);
 blogPostSection.addEventListener("click", handleClick);
+postForm.addEventListener("submit", createPost);
