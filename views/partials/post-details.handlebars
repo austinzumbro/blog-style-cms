@@ -1,4 +1,22 @@
-<secton class="card">
-    <header>{{title}}</header>
-    <article>{{content}}</article>
+<secton class="card blog-card m-3 mb-5">
+    <header
+        class="bg-dark text-white card-title p-3 d-flex flex-row justify-content-between align-items-baseline"
+    >
+        <h2>{{post.title}}</h2>
+        <span>Posted by
+            {{post.user.username}}
+            on
+            {{format_date post.date_created}}</span>
+    </header>
+    <article class="p-3 mb-5">{{post.content}}</article>
+    {{#if loggedIn}}
+        <button
+            id="add-comment-btn"
+            data-postid="{{post.id}}"
+            class="comments-button btn btn-warning"
+        >Add Comment</button>
+    {{else}}
+        <a href="/login" class="comments-button btn btn-warning">Login or Sign
+            Up to Comment</a>
+    {{/if}}
 </secton>

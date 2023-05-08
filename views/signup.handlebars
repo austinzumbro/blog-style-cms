@@ -1,0 +1,40 @@
+<section class="container w-100 w-lg-50 mx-auto my-5">
+    <form
+        id="signup-form"
+        class="container custom-form custom-light-grey px-3 px-md-5 pb-5 pt-4 m-lg-3"
+    >
+        <h2 class="fs-1 mb-3">Sign Up</h2>
+        <div class="mb-3">
+            <label for="signupUsername" class="mb-1">Username</label>
+            <input type="text" class="form-control" id="signupUsername" />
+        </div>
+        <div class="mb-3">
+            <label for="signupPassword" class="mb-1">Password</label>
+            <input
+                type="password"
+                id="signupPassword"
+                class="form-control"
+                aria-labelledby="passwordHelpInline"
+            />
+            <span
+                id="passwordHelpInline"
+                class="form-text ms-md-3 custom-light-grey"
+            >
+                Must be 8 or more characters.
+            </span>
+        </div>
+        <div class="row g-3 d-flex flex-row justify-content-between">
+            <div class="col-12 col-lg-auto">
+                <button
+                    type="submit"
+                    class="btn btn-lg btn-dark"
+                >Submit</button>
+            </div>
+            <div class="col-12 col-lg-auto">
+                <a href="/login" class="btn btn-lg btn-light">Actually, I need
+                    to Login</a>
+            </div>
+        </div>
+    </form>
+</section>
+<script src="/js/signup.js"></script>

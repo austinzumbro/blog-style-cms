@@ -1,0 +1,54 @@
+<section id="past-blog-post-{{id}}" class="card blog-card m-3 mb-5">
+    <header
+        class="bg-dark text-white card-title p-3 d-flex flex-row justify-content-between align-items-baseline"
+    >
+        <h3>{{title}}</h3>
+        <span>Posted on {{format_date date_created}}</span>
+    </header>
+    <article class="p-3 mb-5">{{content}}</article>
+    {{!-- <a
+        href="/post/{{id}}/update"
+        class="btn btn-lg btn-warning update-button"
+    >Update</a> --}}
+    <button
+        class="btn btn-lg btn-warning update-button"
+        data-postid="{{id}}"
+    >Update</button>
+
+    <a href="/post/{{id}}" class="comments-button">Comments
+        <span class="comment-count">{{array_length comments}}</span></a>
+</section>
+
+<section
+    id="update-post-section-{{id}}"
+    class="container blog-card m-3 ms-2 mb-5 update-post-section d-none"
+>
+    <form id="update-post-form-{{id}}">
+        <div class="form-floating">
+            <input
+                type="text"
+                id="post-title-{{id}}"
+                class="form-control form-control-lg bg-dark text-light fs-3"
+                placeholder="Post title goes here"
+                value="{{title}}"
+            />
+            <label for="post-title-{{id}}">Title</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea
+                id="post-textarea-{{id}}"
+                class="form-control"
+                placeholder="Post body goes here"
+                style="height: 200px"
+            >{{content}}</textarea>
+            <label for="post-textarea-{{id}}">Content</label>
+        </div>
+        {{! <input type="submit" class="btn btn-lg btn-primary new-post-button ms-2"> }}
+        <button
+            type="submit"
+            form="update-post-form-{{id}}"
+            class="btn btn-lg btn-danger update-submit-button"
+            data-postid="{{id}}"
+        >Update</button>
+    </form>
+</section>

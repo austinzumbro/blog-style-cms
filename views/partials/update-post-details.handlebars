@@ -1,0 +1,38 @@
+<secton class="card blog-card m-3 mb-5">
+    <header
+        class="bg-dark text-white card-title p-3 d-flex flex-row justify-content-between align-items-baseline"
+    >
+        <h2>{{post.title}}</h2>
+        <span>Posted by
+            {{post.user.username}}
+            on
+            {{format_date post.date_created}}</span>
+    </header>
+    <article class="p-3 mb-5">{{post.content}}</article>
+    {{#if loggedIn}}
+        <button
+            id="add-comment-btn"
+            data-postid="{{post.id}}"
+            class="comments-button btn btn-warning"
+        >Add Comment</button>
+    {{else}}
+        <a href="/login" class="comments-button btn btn-warning">Login or Sign
+            Up to Comment</a>
+    {{/if}}
+</secton>
+
+<section id="create-new-post-section" class="container ms-3 mb-4">
+        <form id="update-post-form">
+            <div class="form-floating mb-3">
+                <input type="text" id="post-title" class="form-control" placeholder="Post title goes here" value="{{post.title}}">
+                <label for="post-title">Title</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea id="post-textarea" class="form-control" placeholder="Post body goes here" style="height: 200px">{{post.content}}</textarea>
+                <label for="post-textarea">Content</label>
+            </div>
+            <input type="submit" class="btn btn-lg btn-primary new-post-button ms-2"></form>
+            </div>
+        </form>
+
+    </section>
